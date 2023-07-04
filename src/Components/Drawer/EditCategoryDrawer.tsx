@@ -40,11 +40,15 @@ export default function EditCategoryDrawer({ categoryId, categoryName, categoryD
 
     const updateCategory = async () => {
         setIsLoading(true);
+        console.log(categoryStatusValue)
+        let categoryStatus = categoryStatusValue === 0 ? true : false;
         const buildBody: UpdateCategoryRequest = {
             name: categoryNameValue,
             description: categoryDescriptionValue,
-            status: categoryStatusValue == 0 ? true : false
+            status: categoryStatus
         }
+        console.log(categoryStatus)
+        console.log(buildBody);
         const response = await UpdateCategoryWebService(categoryId, token, buildBody);
         setTimeout(() => {
             setIsLoading(false);
@@ -124,5 +128,4 @@ export default function EditCategoryDrawer({ categoryId, categoryName, categoryD
             </Drawer>
         </>
     )
-
 }

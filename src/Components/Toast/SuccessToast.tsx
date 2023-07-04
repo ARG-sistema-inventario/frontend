@@ -12,7 +12,7 @@ export function SuccessToast() {
                 title: title,
                 description: message,
                 status: status,
-                duration: 9000,
+                duration: 3000,
                 position: "top",
                 isClosable: true,
             })
